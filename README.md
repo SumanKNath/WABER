@@ -1,4 +1,4 @@
-WABER: UI Agent Benchmark Library
+# WABER: UI Agent Benchmark Library
 
 ## Set up mitmproxy
 1. Download mitmproxy [here](https://mitmproxy.org/downloads/).
