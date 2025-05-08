@@ -10,6 +10,8 @@ This will create the binary executables: `mitmproxy, mitmdump, mitmweb`.
 5. Run `scripts/install-certificate.sh` to install and update the certificate on your system.
 6. Now, for testing, open two terminal instances. In the first terminal, run `./mitmproxy`. In the second terminal, set your proxy environment variables `export http_proxy=http://127.0.0.1:8080`, `export https_proxy=http://127.0.0.1:8080`, then run `curl https://www.google.com`. You should now see the request appear in the **first terminal** inside mitmproxy’s interactive environment. From there, you can inspect the full request and response details.
 
+Note: The ip tables solution which is more low-level and can be more efficient for an agent developer and is located under the scripts folder is based off of code from the [urldump repo](https://github.com/lemonsqueeze/urldump)
+
 ## Set up WebArena following the instructions [here](https://github.com/web-arena-x/webarena) and the environments themselves using the Docker instructions [here](https://github.com/web-arena-x/webarena/blob/main/environment_docker/README.md)
 
 ## Set up SteP agent following instructions [here](https://github.com/asappresearch/webagents-step)
