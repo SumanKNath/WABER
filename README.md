@@ -1,4 +1,4 @@
-# WABER: UI Agent Benchmark Library
+# WAREX Supplementary Code
 
 ## Set up mitmproxy
 1. Download mitmproxy [here](https://mitmproxy.org/downloads/).
@@ -16,25 +16,9 @@ Note: The ip tables solution which is more low-level and can be more efficient f
 
 ## Set up SteP agent following instructions [here](https://github.com/asappresearch/webagents-step)
 
-## Set up AWM agent following instructions [here](https://github.com/zorazrw/agent-workflow-memory)
+## Set up WebVoyager following instructions [here](https://github.com/MinorJerry/WebVoyager)
 
-## Run mitmproxy with addon.py script for **efficiency** evaluation
-Here are the settings for `config.json`:
-```
-addon:
- 0: no addon 
- 1: popup 
- 2: server error
- 3: network error
- 4: random addon
-
-frequency:
- 0: first page
- 1: random page once
- 2: random page multiple times
-```
-
-1. Set addon: 0, frequency: 0 in `config.json`. After setting up your desired benchmark and agent, you may run `./mitmproxy -s addons.py`. This will allow you to record efficiency metrics (prompt tokens, completion tokens, latency) for each LLM call. 
+## Set up REAL following instructions [here](https://github.com/agi-inc/agisdk)
 
 ## Run mitmproxy with addon.py script for **reliability** testing
 Here are the settings for `config.json`:
@@ -52,7 +36,4 @@ frequency:
  2: random page multiple times
 ```
 
-1. You may choose which addon type you'd like to test your agent with, along with the frequency of its appearance. Then, you may run `./mitmproxy -s addons.py` which uses the settings defined in `config.json`. This will allow you to intercept when there is a new request made in the Docker environment, and modify the response to introduce unreliable scenarios to test the desired agent against.  
-
-
-
+1. You may choose which addon type you'd like to test your agent with, along with the frequency of its appearance. Then, you may run `./mitmproxy -s addons.py` which uses the settings defined in `config.json`. This will allow you to intercept when there is a new request made in the Docker environment, and modify the response to introduce unreliable scenarios to test the desired agent against. This will also allow you to record efficiency metrics (prompt tokens, completion tokens, latency) for each LLM call. 
